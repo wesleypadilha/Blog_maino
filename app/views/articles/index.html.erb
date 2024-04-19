@@ -1,0 +1,52 @@
+<!-- app/views/articles/index.html.erb -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Wesley</title>
+  <style>
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: #f00;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 20px;
+    }
+    a {
+      color: #00f;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Blog Wesley</h1>
+
+  <ul>
+    <% @articles.each do |article| %>
+      <li>
+        <h2><%= article.title %></h2>
+        <p><%= article.body %></p>
+        <p><a href="<%= article_path(article) %>">Veja mais</a></p>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= will_paginate @articles %>
+
+  <%= link_to "New Article", new_article_path %>
+
+  <p>Direitos reservados.</p>
+</body>
+</html>

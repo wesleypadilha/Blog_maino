@@ -1,0 +1,22 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: blog_dev
+  username: postgres
+  password: 8763ggtAhh
+  host: localhost
+
+development:
+  <<: *default
+  database: blog_dev
+  username: postgres
+  password: 8763ggtAhh
+  host: localhost
+
+production:
+  <<: *default
+  database: blogguer_production
+  username: postgres
+  password: 8763ggtAhh
+  host: localhost3
